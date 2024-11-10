@@ -1,0 +1,242 @@
+/* Reset default padding and margin for all elements */
+* {
+    padding: 0;
+    margin: 0;
+}
+
+/* Set body background with gradient and establish positioning */
+body {
+    background-image: linear-gradient(270deg, rgb(189, 154, 253), rgb(90, 9, 221));
+    position: relative;
+}
+
+/* Navbar styling */
+.navbar {
+    height: 8vh;
+    background-color: rgb(91, 41, 228);
+    opacity: 0.4; /* Translucent background for navbar */
+    padding: 2vh;
+    position: relative;
+}
+
+/* Navigation item styles */
+.nav1 {
+    border: 1px solid black; /* Border for visual separation */
+    height: 7vh;
+    width: 60vw;
+    border-radius: 17px; /* Rounded corners */
+    position: absolute;
+    background-color: white; /* Background for nav item */
+    cursor: pointer; /* Pointer cursor for interactive element */
+}
+
+.nav2 {
+    border: 1px solid black;
+    height: 7vh;
+    width: 20vw;
+    display: flex; /* Flexbox for alignment */
+    position: absolute;
+    right: 5vw;
+    top: 2vh;
+    border-radius: 25px;
+    background-color: white; 
+    cursor: pointer; 
+}
+
+/* Game area layout with flex properties */
+.game {
+    display: flex;
+    flex-direction: row; /* Horizontal layout */
+    flex-wrap: wrap; /* Allow wrapping */
+    height: 80vh;
+    gap: 50px; /* Spacing between game items */
+    justify-content: space-evenly; /* Even spacing around items */
+    align-items: flex-start; /* Align items to the start of the container */
+    align-content: space-around; /* Space around content */
+}
+
+/* Individual game card styles */
+.g {
+    width: 400px;
+    height: 400px;
+    margin: 5px;
+    padding: 10px;
+    border: 1px solid black;
+    margin-top: 5vh; /* Margin for separation from other elements */
+    margin-left: 1vw;
+    margin-right: 1vw;
+    position: relative;
+    border-radius: 25px; /* Rounded corners */
+    padding: 0; /* Resetting padding inside card */
+    box-shadow: 5px 5px 15px 0px rgb(8, 11, 185); /* Shadow effect */
+}
+
+/* Game detail overlay styling */
+.gd {
+    font-family: monospace; /* Monospace font for details */
+    border: 1px solid black;
+    position: absolute;
+    width: 100%;
+    bottom: 0%; /* Positioned at the bottom of game card */
+    height: 22%;
+    border-radius: 25px;
+    overflow: hidden; /* Hide overflow content */
+    transition: height 2.2s ease; /* Smooth transition on hover */
+    opacity: 0.6; /* Semi-transparent overlay background */
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px; /* Padding inside detail section */
+    box-sizing: border-box; /* Include padding in width/height calculations */
+}
+
+/* Expand detail overlay on hover */
+.gd:hover {
+    height: 75%; /* Increase height on hover */
+}
+
+/* Heading and paragraph styles within game detail */
+.gd h1 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: rgb(51, 51, 51);
+    margin-bottom: 2px; /* Spacing below heading */
+}
+
+.gd p {
+    font-size: 1rem;
+    color: rgb(75, 75, 75);
+    line-height: 1.4; /* Improved line spacing */
+}
+
+/* Gradient effect at the bottom of the game detail */
+.gd::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 20px;
+    background: linear-gradient(transparent, #93C5FD); /* Gradient effect */
+    pointer-events: none; /* Ignore mouse events */
+    transition: opacity 2.2s ease; /* Smooth transition for opacity change */
+}
+
+/* Main content area styling */
+.main {
+    border: 1px solid black;
+    height: 170vh;
+    position: relative;
+    width:100vw;
+    height: 100vh;
+    bottom: 0px; /* Positioned at the bottom of parent container */
+}
+
+/* Responsive design adjustments */
+@media (max-width: 1390px) {
+    .main {
+        height: 300vh; /* Increase height for smaller screens */
+    }
+}
+
+@media (max-width: 900px) {
+    .main {
+        height: 535vh; /* Further increase height for very small screens */
+    }
+}
+
+@media (max-width: 576px) {
+    .g {
+        width: 80vw; /* Smaller width for game cards */
+        height: 80vw; /* Height adjustment for mobile */
+    }
+
+    .main {
+        height: 560vh; /* Adjust main height for mobile */
+    }
+
+    .footer {
+        height: 1vh; /* Minimal footer height */
+        display: flex;
+        flex-direction: column; /* Stack footer items */
+    }
+
+    .footer p {
+        display: none; /* Hide paragraph in footer */
+    }
+}
+
+@media (max-width: 460px) {
+    .main {
+        height: 460vh; /* Adjust height for very small screens */
+    }
+}
+
+@media (max-width: 400px) {
+    .main {
+        height: 540vh; /* Further height adjustment */
+    }
+}
+
+/* Footer styling */
+.footer {
+    position: absolute;
+    bottom: 0; /* Stick to the bottom */
+    width: 100vw;
+    height: 70px;
+    background-color: purple; /* Footer background color */
+    color: white; /* Text color */
+    padding: 20px;
+    box-sizing: border-box; /* Include padding in size calculations */
+    text-align: center; /* Center-align text */
+    display: flex; /* Flexbox for layout */
+    justify-content: space-around; /* Space around elements */
+    align-items: center; /* Center items vertically */
+    flex-wrap: wrap; /* Allow items to wrap */
+    font-family: 'Arial', sans-serif; /* Set font for footer */
+    font-size: 1rem; /* Font size for footer text */
+}
+
+.footer a {
+    color: white; /* Link text color */
+    text-decoration: none; /* Remove underline from links */
+    margin: 0 10px; /* Spacing between links */
+    font-size: 1.1rem; /* Font size for links */
+    transition: color 0.3s ease; /* Smooth transition for color change */
+}
+
+.footer a:hover {
+    color: #93C5FD; /* Change link color on hover */
+}
+
+.footer p {
+    margin: 5px 0; /* Vertical spacing for footer paragraph */
+    font-size: 0.9rem; /* Smaller font size for paragraph */
+    color: rgba(255, 255, 255, 0.8); /* Slightly transparent color */
+}
+
+/* Social icons container styling */
+.footer .social-icons {
+    display: flex; /* Flex container for icons */
+    gap: 15px; /* Space between icons */
+}
+
+.footer .social-icons i {
+    font-size: 1.5rem;
+    color: white; /* Icon color */
+    transition: color 0.3s ease; /* Smooth transition on hover */
+}
+
+.footer .social-icons i:hover {
+    color: #93C5FD; /* Change icon color on hover */
+}
+
+/* Responsive adjustments for footer */
+@media (max-width: 768px) {
+    .footer {
+        flex-direction: column; /* Stack footer items vertically */
+        align-items: center; /* Center items */
+    }
+
+    .footer .social-icons {
+        margin-top: 10px; /* Space above social icons */
+    }
+}
